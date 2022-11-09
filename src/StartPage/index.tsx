@@ -6,7 +6,6 @@ import logo from './codeBoxLogo.png';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import useMatchMedia from 'use-match-media-hook';
-import { ReactComponent as svgLogo } from './codeBoxLogo.svg';
 
 const queries = ['(max-width: 400px)', '(min-width: 800px)'];
 
@@ -23,17 +22,48 @@ const StartPage = () => {
   const navigate = useNavigate();
   const [mobile, desktop] = useMatchMedia(queries);
 
+  const containerVariants = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+      transition: {
+        delay: 1,
+        when: 'beforeChildren',
+      },
+    },
+  };
+
+  const childVariants = {
+    hidden: {
+      y: '-100vh',
+    },
+    visible: {
+      y: 0,
+      transition: {
+        type: 'spring',
+        delay: 0.5,
+        stiffness: 100,
+        mass: 0.4,
+        damping: 15,
+      },
+    },
+  };
+
   return (
-    <>
-      {desktop ? (
-        <>
-          {' '}
-          <Base>
+    <motion.div variants={containerVariants} initial="hidden" animate="visible">
+      <Base>
+        {desktop ? (
+          <>
+            {' '}
             <Box
+              component={motion.div}
               sx={{ minHeight: '100vh' }}
               justifyContent={'center'}
               alignItems={'center'}
               display={'flex'}
+              variants={childVariants}
             >
               <Box textAlign={'center'}>
                 <Box
@@ -74,11 +104,9 @@ const StartPage = () => {
                 </Box>
               </Box>
             </Box>
-          </Base>
-        </>
-      ) : (
-        <>
-          <Base>
+          </>
+        ) : (
+          <>
             <Box
               sx={{ minHeight: '100vh' }}
               justifyContent={'center'}
@@ -124,10 +152,10 @@ const StartPage = () => {
                 </Box>
               </Box>
             </Box>
-          </Base>
-        </>
-      )}
-    </>
+          </>
+        )}
+      </Base>
+    </motion.div>
   );
 };
 
