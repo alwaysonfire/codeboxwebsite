@@ -1,18 +1,19 @@
 {
   "files": {
     "main.css": "./static/css/main.25810708.css",
-    "main.js": "./static/js/main.6cc1ee02.js",
+    "main.js": "./static/js/main.bc8c5d77.js",
     "static/media/startPage.png": "./static/media/startPage.8f08b7de4e0def586989.png",
     "static/media/background.png": "./static/media/background.4ece0bce8d0a51bf6040.png",
     "static/media/codeBoxLogo.png": "./static/media/codeBoxLogo.11ea0a630359d698d5f7.png",
     "static/media/Codebox_logo-Horizontal.png": "./static/media/Codebox_logo-Horizontal.6b4444e8e5c0eb2917ef.png",
+    "static/media/codeBoxMobile.jpg": "./static/media/codeBoxMobile.66f45689a88192831e99.jpg",
     "static/media/Poppins-Regular.ttf": "./static/media/Poppins-Regular.9171031e050ecf676c11.ttf",
     "index.html": "./index.html",
     "main.25810708.css.map": "./static/css/main.25810708.css.map",
-    "main.6cc1ee02.js.map": "./static/js/main.6cc1ee02.js.map"
+    "main.bc8c5d77.js.map": "./static/js/main.bc8c5d77.js.map"
   },
   "entrypoints": [
     "static/css/main.25810708.css",
-    "static/js/main.6cc1ee02.js"
+    "static/js/main.bc8c5d77.js"
   ]
 }
